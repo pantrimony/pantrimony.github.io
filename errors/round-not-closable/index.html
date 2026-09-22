@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>round-not-closable · Pantrimony errors</title>
+<meta name="description" content="Voting is still open.">
+<style>
+    :root {
+      color-scheme: light dark;
+      --paper: #EDE9E0;
+      --paper-2: #E2DDD2;
+      --ink: #111111;
+      --ink-2: #3A3A3A;
+      --ink-3: #4E4A44;
+      --strip: #456B50;
+      --strip-ink: #F4F1E8;
+      --accent: #3C5A45;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #161512;
+        --paper-2: #1E1C18;
+        --ink: #F0EBE3;
+        --ink-2: #C4BDB2;
+        --ink-3: #9A9286;
+        --strip: #2A3D30;
+        --strip-ink: #E8F0E9;
+        --accent: #8FBF98;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    .wrap { max-width: 42rem; margin: 0 auto; padding: 3rem 1rem 4rem; }
+    a { color: var(--accent); }
+    .home {
+      display: inline-block; margin-bottom: 2.5rem; font-size: .875rem;
+      text-decoration: none; color: var(--ink-3);
+    }
+    .home:hover { color: var(--accent); }
+    .status {
+      display: inline-block; padding: .2rem .6rem; border-radius: .25rem;
+      background: var(--strip); color: var(--strip-ink);
+      font: 600 .8125rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: .03em;
+    }
+    h1 {
+      margin: .9rem 0 .4rem; font-size: 1.6rem; line-height: 1.25;
+      letter-spacing: -.01em;
+    }
+    code.slug {
+      font: .9375rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: var(--ink-3);
+    }
+    h2 {
+      margin: 2.2rem 0 .5rem; font-size: .8125rem; text-transform: uppercase;
+      letter-spacing: .08em; color: var(--ink-3);
+    }
+    p { margin: 0 0 1rem; color: var(--ink-2); }
+    .copy {
+      margin: 0; padding: 1rem 1.15rem; border-left: 3px solid var(--accent);
+      background: var(--paper-2); color: var(--ink); font-size: 1.0625rem;
+    }
+    dl { margin: 0; display: grid; grid-template-columns: 8.5rem 1fr; gap: .4rem 1rem; }
+    dt { color: var(--ink-3); font-size: .875rem; }
+    dd { margin: 0; font: .875rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    footer {
+      margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--paper-2);
+      font-size: .8125rem; color: var(--ink-3);
+    }
+    ul.index { list-style: none; margin: 0; padding: 0; }
+    ul.index li { padding: .55rem 0; border-bottom: 1px solid var(--paper-2); }
+    ul.index a {
+      font: .9375rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+      text-decoration: none;
+    }
+    ul.index a:hover { text-decoration: underline; }
+    ul.index span { color: var(--ink-3); font-size: .8125rem; }
+    @media (max-width: 30rem) {
+      dl { grid-template-columns: 1fr; gap: .1rem; }
+      dt { margin-top: .6rem; }
+    }
+    </style>
+</head>
+<body>
+<div class="wrap">
+  <a class="home" href="/errors/">&larr; all error types</a>
+  <span class="status">HTTP 409</span>
+  <h1>Voting is still open.</h1>
+  <code class="slug">round-not-closable</code>
+
+  <h2>What this page is</h2>
+  <p>
+    This URL is the <code>type</code> identifier in an
+    <a href="https://www.rfc-editor.org/rfc/rfc9457.html">RFC 9457</a> problem
+    response from the Pantrimony API. It names the kind of failure; it is not a
+    support page, and it carries no details of any particular request.
+  </p>
+
+  <h2>What the app shows</h2>
+  <p class="copy">Voting is still open.</p>
+
+  <h2>What to do</h2>
+  <p>Nothing can be retried. The request will not succeed as it stands.</p>
+
+  <h2>Details</h2>
+  <dl>
+    <dt>Type URI</dt><dd>https://pantrimony.com/errors/round-not-closable</dd>
+    <dt>HTTP status</dt><dd>409</dd>
+    <dt>Module</dt><dd>voting</dd>
+    <dt>Surface</dt><dd>toast</dd>
+  </dl>
+
+  <footer>
+    Pantrimony · <a href="https://pantrimony.com/">pantrimony.com</a><br>
+    Generated from the error deck, so this page and the app's copy cannot drift apart.
+  </footer>
+</div>
+</body>
+</html>
