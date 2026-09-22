@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.pantrimony",
+      "sha256_cert_fingerprints": [
+        "8D:0E:73:62:64:C9:5C:2E:C6:B2:A3:12:BA:7A:82:15:F6:B2:12:F8:F8:39:1A:FA:D4:E8:81:7D:E6:3B:34:B3"
+      ]
+    }
+  }
+]
