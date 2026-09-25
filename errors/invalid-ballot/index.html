@@ -36,7 +36,7 @@
       color: var(--ink);
       font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
     }
-    .wrap { max-width: 42rem; margin: 0 auto; padding: 3rem 1rem 4rem; }
+    .wrap { max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
     a { color: var(--accent); }
     .home {
       display: inline-block; margin-bottom: 2.5rem; font-size: .875rem;
@@ -58,17 +58,36 @@
       color: var(--ink-3);
     }
     h2 {
-      margin: 2.2rem 0 .5rem; font-size: .8125rem; text-transform: uppercase;
+      margin: 2.8rem 0 .6rem; font-size: .8125rem; text-transform: uppercase;
       letter-spacing: .08em; color: var(--ink-3);
     }
     p { margin: 0 0 1rem; color: var(--ink-2); }
+    /* On an error page this quotes the app's own words, so it is set apart.
+       A page lead is not a quotation and should not wear a box. */
     .copy {
       margin: 0; padding: 1rem 1.15rem; border-left: 3px solid var(--accent);
       background: var(--paper-2); color: var(--ink); font-size: 1.0625rem;
     }
-    dl { margin: 0; display: grid; grid-template-columns: 8.5rem 1fr; gap: .4rem 1rem; }
-    dt { color: var(--ink-3); font-size: .875rem; }
-    dd { margin: 0; font: .875rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .lead {
+      margin: 0 0 2rem; color: var(--ink-2);
+      font-size: 1.1875rem; line-height: 1.55;
+    }
+    /* Prose definition lists: a term and an explanation, both read as text. */
+    dl { margin: 0 0 1rem; }
+    dt {
+      margin: 1.1rem 0 .15rem; color: var(--ink); font-weight: 600;
+      font-size: .9375rem;
+    }
+    dd { margin: 0; color: var(--ink-2); }
+    /* The error pages' Details block is machine values, not prose — grid and
+       monospace are right there and wrong everywhere else. */
+    dl.machine { display: grid; grid-template-columns: 9rem 1fr; gap: .4rem 1rem; }
+    dl.machine dt {
+      margin: 0; color: var(--ink-3); font-size: .875rem; font-weight: 400;
+    }
+    dl.machine dd {
+      font: .875rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
     footer {
       margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--paper-2);
       font-size: .8125rem; color: var(--ink-3);
@@ -84,9 +103,14 @@
     }
     ul.index a:hover { text-decoration: underline; }
     ul.index span { color: var(--ink-3); font-size: .8125rem; }
+    /* A type URI is one long unbreakable token; without this it decides the
+       page's width on a phone and everything else scrolls sideways with it. */
+    dl.machine dd { overflow-wrap: anywhere; }
     @media (max-width: 30rem) {
-      dl { grid-template-columns: 1fr; gap: .1rem; }
-      dt { margin-top: .6rem; }
+      /* Stack the machine list rather than squeezing a URI into a 9rem column.
+         The prose list is not a grid and needs nothing here. */
+      dl.machine { grid-template-columns: 1fr; gap: .1rem; }
+      dl.machine dt { margin-top: .6rem; }
     }
     </style>
 </head>
@@ -112,7 +136,7 @@
   <p>Check what was entered and try again.</p>
 
   <h2>Details</h2>
-  <dl>
+  <dl class="machine">
     <dt>Type URI</dt><dd>https://pantrimony.com/errors/invalid-ballot</dd>
     <dt>HTTP status</dt><dd>422</dd>
     <dt>Module</dt><dd>voting</dd>

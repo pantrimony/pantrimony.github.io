@@ -36,7 +36,7 @@
       color: var(--ink);
       font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
     }
-    .wrap { max-width: 42rem; margin: 0 auto; padding: 3rem 1rem 4rem; }
+    .wrap { max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
     a { color: var(--accent); }
     .home {
       display: inline-block; margin-bottom: 2.5rem; font-size: .875rem;
@@ -58,17 +58,36 @@
       color: var(--ink-3);
     }
     h2 {
-      margin: 2.2rem 0 .5rem; font-size: .8125rem; text-transform: uppercase;
+      margin: 2.8rem 0 .6rem; font-size: .8125rem; text-transform: uppercase;
       letter-spacing: .08em; color: var(--ink-3);
     }
     p { margin: 0 0 1rem; color: var(--ink-2); }
+    /* On an error page this quotes the app's own words, so it is set apart.
+       A page lead is not a quotation and should not wear a box. */
     .copy {
       margin: 0; padding: 1rem 1.15rem; border-left: 3px solid var(--accent);
       background: var(--paper-2); color: var(--ink); font-size: 1.0625rem;
     }
-    dl { margin: 0; display: grid; grid-template-columns: 8.5rem 1fr; gap: .4rem 1rem; }
-    dt { color: var(--ink-3); font-size: .875rem; }
-    dd { margin: 0; font: .875rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .lead {
+      margin: 0 0 2rem; color: var(--ink-2);
+      font-size: 1.1875rem; line-height: 1.55;
+    }
+    /* Prose definition lists: a term and an explanation, both read as text. */
+    dl { margin: 0 0 1rem; }
+    dt {
+      margin: 1.1rem 0 .15rem; color: var(--ink); font-weight: 600;
+      font-size: .9375rem;
+    }
+    dd { margin: 0; color: var(--ink-2); }
+    /* The error pages' Details block is machine values, not prose — grid and
+       monospace are right there and wrong everywhere else. */
+    dl.machine { display: grid; grid-template-columns: 9rem 1fr; gap: .4rem 1rem; }
+    dl.machine dt {
+      margin: 0; color: var(--ink-3); font-size: .875rem; font-weight: 400;
+    }
+    dl.machine dd {
+      font: .875rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
     footer {
       margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--paper-2);
       font-size: .8125rem; color: var(--ink-3);
@@ -84,9 +103,14 @@
     }
     ul.index a:hover { text-decoration: underline; }
     ul.index span { color: var(--ink-3); font-size: .8125rem; }
+    /* A type URI is one long unbreakable token; without this it decides the
+       page's width on a phone and everything else scrolls sideways with it. */
+    dl.machine dd { overflow-wrap: anywhere; }
     @media (max-width: 30rem) {
-      dl { grid-template-columns: 1fr; gap: .1rem; }
-      dt { margin-top: .6rem; }
+      /* Stack the machine list rather than squeezing a URI into a 9rem column.
+         The prose list is not a grid and needs nothing here. */
+      dl.machine { grid-template-columns: 1fr; gap: .1rem; }
+      dl.machine dt { margin-top: .6rem; }
     }
     </style>
 </head>
@@ -94,41 +118,40 @@
 <div class="wrap">
   <a class="home" href="/">&larr; pantrimony.com</a>
   <h1>Privacy</h1>
-  <p class="copy">
+  <p class="lead">
     Pantrimony is a household app. It holds what your household eats, who is in
-    it, and how to reach the person who cooks. This page says exactly what that
-    means, in plain words.
+    it, and how to reach the person who cooks. This page says what that means.
   </p>
 
   <h2>Who is responsible</h2>
   <p>
     Pantrimony is run by <strong>Harit Mohan</strong>, an individual in
-    Bengaluru, India — not a company. Questions, corrections and complaints go
-    to <a href="mailto:support@pantrimony.com">support@pantrimony.com</a> and
-    reach a person, not a helpdesk.
+    Bengaluru, India. It is not a company. Questions, corrections and complaints
+    go to <a href="mailto:support@pantrimony.com">support@pantrimony.com</a>, and
+    reach a person.
   </p>
   <p>
-    Under India's Digital Personal Data Protection Act 2023 that makes him the
+    Under India's Digital Personal Data Protection Act 2023, that makes him the
     <em>data fiduciary</em> for everything described here. If a complaint is not
-    resolved, it can be taken to the Data Protection Board of India.
+    resolved, you can take it to the Data Protection Board of India.
   </p>
 
   <h2>What is collected, and why</h2>
-  <p>This is the whole list. There is nothing held back for a shorter summary.</p>
+  <p>This is the whole list.</p>
   <dl>
     <dt>Phone number</dt>
-    <dd>Identifies the account and is how you sign in. Required.</dd>
+    <dd>Identifies your account, and is how you sign in. Required.</dd>
 
     <dt>Name</dt>
-    <dd>So the rest of your household knows who voted and who bought the dal.</dd>
+    <dd>So the rest of your household knows who voted, and who bought the dal.</dd>
 
     <dt>Email address</dt>
-    <dd>Optional. Used to send a sign-in link and nothing else.</dd>
+    <dd>Optional. Used to send a sign-in link, and nothing else.</dd>
 
     <dt>Password</dt>
     <dd>
-      Stored only as an Argon2 hash. The password itself is never written down,
-      which is also why it cannot be recovered — only reset.
+      Stored only as an Argon2 hash. The password itself is never written down.
+      That is also why it cannot be recovered, only reset.
     </dd>
 
     <dt>Household details</dt>
@@ -142,56 +165,54 @@
 
     <dt>What is in the kitchen</dt>
     <dd>
-      Foods, quantities or levels, and a log of who changed what and when — so
-      a disagreement about whether the rice ran out has an answer.
+      Foods, quantities or levels, and a log of who changed what and when. So a
+      disagreement about whether the rice ran out has an answer.
     </dd>
 
     <dt>Votes and preferences</dt>
     <dd>
-      Which dishes were suggested, how each member voted, and each member's
-      food and dish preferences. Votes are visible to the household; that is
-      the point of them.
+      Which dishes were suggested, how each member voted, and each member's food
+      and dish preferences. Votes are visible to the household. That is the
+      point of them.
     </dd>
 
     <dt>Join attempts</dt>
     <dd>
-      Each attempt to use an invite code, with the outcome and time. Used only
-      to stop codes being guessed, and deleted after 30 days.
+      Each attempt to use an invite code, with the outcome and time. Used only to
+      stop codes being guessed, and deleted after 30 days.
     </dd>
 
     <dt>Sign-in sessions</dt>
     <dd>Hashed session tokens and their expiry. Never the token itself.</dd>
   </dl>
 
-  <h2>What is deliberately not collected</h2>
+  <h2>What is not collected</h2>
   <ul class="plain">
-    <li>No analytics or tracking of any kind. No Google Analytics, no third-party SDK watching what you tap.</li>
+    <li>No analytics, and no tracking. No Google Analytics, no third-party SDK watching what you tap.</li>
     <li>No advertising, and no advertising identifiers.</li>
     <li>No location.</li>
     <li>No contacts, photos, or anything else from your phone beyond what you type in.</li>
-    <li>Nothing is sold, rented or shared for anyone else's marketing. There is no business model here that would want to.</li>
+    <li>Nothing is sold, rented, or shared for anyone else's marketing.</li>
   </ul>
 
   <h2>Where it is stored</h2>
   <p>
-    On a server in <strong>Mumbai, India</strong>, rented from Oracle Cloud.
-    Your data does not leave India in the ordinary course of using the app. The
-    database is not reachable from the internet; it can only be read from the
-    server itself, and administrative access is over a private network with a
-    key, not a password.
+    On a server in <strong>Mumbai, India</strong>, rented from Oracle Cloud. Your
+    data does not leave India in the ordinary course of using the app. The
+    database cannot be reached from the internet. It can only be read from the
+    server itself, and getting into that server needs a key on a private
+    network, not a password.
   </p>
   <p>
-    A backup of the database is taken nightly to storage in the same region and
-    kept for <strong>30 days</strong>, then deleted automatically. Backups exist
-    so a failure does not lose your household's history; they are the one place
-    where deleted data persists briefly, and 30 days is the limit of that.
+    A backup of the database is taken every night, to storage in the same region,
+    and kept for <strong>30 days</strong> before it is deleted automatically.
+    Backups exist so that a failure does not lose your household's history. They
+    are also the one place where deleted data lingers for a while, and 30 days is
+    the limit of that.
   </p>
 
   <h2>Who else sees it</h2>
-  <p>
-    Only services the app genuinely needs, and only the minimum each one
-    requires.
-  </p>
+  <p>Only services the app needs, and only what each one needs.</p>
   <dl>
     <dt>Resend</dt>
     <dd>Sends sign-in emails. Receives an email address and the message.</dd>
@@ -204,61 +225,56 @@
 
     <dt>Google Firebase</dt>
     <dd>
-      <em>Not yet in use.</em> Will deliver push notifications — a nudge to
-      vote, and an alert to admins when a message to the cook fails.
+      <em>Not in use yet.</em> Will deliver push notifications: a nudge to vote,
+      and an alert to admins when a message to the cook fails.
     </dd>
 
     <dt>WhatsApp (Meta)</dt>
     <dd>
-      <em>Not yet in use.</em> Will carry the daily message to your cook. See
+      <em>Not in use yet.</em> Will carry the daily message to your cook. See
       below.
     </dd>
   </dl>
   <p>
-    No one else. There is no data broker, no CRM, no marketing tool, and no
-    analytics vendor in this list because none is used.
+    No one else. There is no data broker, no CRM, no marketing tool and no
+    analytics vendor in this list, because none is used.
   </p>
 
   <h2>Your cook</h2>
   <p>
-    Pantrimony's purpose is to tell the person who cooks what to cook. Doing
-    that means holding <strong>a phone number belonging to someone who is not a
-    user of this app</strong>, and sending messages to it. That deserves saying
-    plainly rather than burying.
-  </p>
-  <p>
-    What the app does about it:
+    The point of Pantrimony is to tell the person who cooks what to cook. Doing
+    that means holding <strong>a phone number belonging to someone who does not
+    use this app</strong>, and sending messages to it. So here is what the app
+    does about that.
   </p>
   <ul class="plain">
     <li>
-      Only a household admin can add a cook's number, and only after explicitly
-      confirming that they have the cook's agreement. The app records that
-      confirmation.
+      Only a household admin can add a cook's number, and only after confirming
+      that they have the cook's agreement. The app records that confirmation.
     </li>
     <li>
-      The cook's number is used for one thing: sending that household's daily
-      message. It is never used for anything else, and never leaves the app's
-      own systems except to deliver that message.
+      The number is used for one thing: sending that household's daily message.
+      It is not used for anything else, and it does not leave the app's own
+      systems except to send that message.
     </li>
     <li>
-      The messages themselves tell the cook who is sending them and how to stop
-      receiving them.
+      The messages say who is sending them, and how to stop receiving them.
     </li>
     <li>
       Removing a cook from a household deletes the number.
     </li>
   </ul>
   <p>
-    If you are a cook and you are receiving these messages and would rather not,
+    If you are a cook, and you are getting these messages and would rather not,
     write to <a href="mailto:support@pantrimony.com">support@pantrimony.com</a>
     and the number will be removed. You do not need an account to ask.
   </p>
 
   <h2>Children</h2>
   <p>
-    Pantrimony is not intended for anyone under 18, and accounts must be created
-    by adults. A household may of course cook for children; the app simply has
-    no account for them, and none should be created on their behalf.
+    Pantrimony is not meant for anyone under 18, and accounts must be created by
+    adults. A household may of course cook for children. The app simply has no
+    account for them, and none should be created on their behalf.
   </p>
 
   <h2>What you can ask for</h2>
@@ -267,12 +283,12 @@
     <dd>Write to support@pantrimony.com and you will get it.</dd>
 
     <dt>A correction</dt>
-    <dd>Your name and email can be changed in the app; anything else, ask.</dd>
+    <dd>Your name and email can be changed in the app. For anything else, ask.</dd>
 
     <dt>Deletion</dt>
     <dd>
-      You can delete your account from the app. What happens is described below
-      because it is not quite as simple as "everything vanishes".
+      You can delete your account from inside the app. What that does is
+      described below, because it is not quite "everything vanishes".
     </dd>
 
     <dt>To withdraw consent</dt>
@@ -282,47 +298,46 @@
     </dd>
   </dl>
 
-  <h2>What deletion actually does</h2>
+  <h2>What deletion does</h2>
   <p>
     When you delete your account, your name becomes "Former member", your email
-    is erased, your phone number is replaced with a value that cannot be
-    dialled, your password hash is destroyed and every session is revoked
-    immediately. The record that your phone was ever verified is erased too —
-    a note saying "this erased person had a verified number" is still
-    information about you.
+    is erased, your phone number is replaced with a value that cannot be dialled,
+    your password hash is destroyed, and every session is revoked at once. The
+    record that your phone was ever verified is erased too, because a note saying
+    "this erased person had a verified number" is still information about you.
   </p>
   <p>
-    What remains is the household's shared history: that <em>someone</em>
-    bought rice on a Tuesday, and how a vote went. Those rows keep an
-    anonymous identifier so the household's own records stay coherent, and they
-    show as "Former member". They cannot be traced back to you.
+    What stays is the household's shared history: that <em>someone</em> bought
+    rice on a Tuesday, and how a vote went. Those rows keep an anonymous
+    identifier so the household's own records still make sense, and they show as
+    "Former member". They cannot be traced back to you.
   </p>
   <p>
-    This is a deliberate trade: erasing shared history would quietly rewrite
-    other people's records of their own household. If you want that history
-    removed as well, ask, and it will be discussed with the household.
+    This is a trade. Erasing the shared history would quietly rewrite other
+    people's records of their own household. If you want that history removed as
+    well, ask, and it will be discussed with the household.
   </p>
 
   <h2>How long things are kept</h2>
   <ul class="plain">
-    <li><strong>Your account</strong> — until you delete it.</li>
-    <li><strong>Anonymised history</strong> — kept, as described above.</li>
-    <li><strong>Join attempts</strong> — 30 days.</li>
-    <li><strong>Backups</strong> — 30 days, then deleted automatically.</li>
-    <li><strong>Sessions</strong> — until they expire or you sign out.</li>
+    <li><strong>Your account</strong>, until you delete it.</li>
+    <li><strong>Anonymised history</strong>, kept, as described above.</li>
+    <li><strong>Join attempts</strong>, 30 days.</li>
+    <li><strong>Backups</strong>, 30 days, then deleted automatically.</li>
+    <li><strong>Sessions</strong>, until they expire or you sign out.</li>
   </ul>
 
-  <h2>Security, honestly</h2>
+  <h2>Security</h2>
   <p>
     Passwords are hashed with Argon2. Session tokens are stored hashed. Traffic
-    is encrypted in transit. The database is not exposed to the internet and
-    administrative access requires a key on a private network.
+    is encrypted in transit. The database is not exposed to the internet, and
+    administrative access needs a key on a private network.
   </p>
   <p>
-    What honesty requires adding: this is a small app run by one person, not a
-    company with a security team. It is built carefully, but no one should give
-    it information whose exposure would be serious. It holds what you eat, not
-    your money.
+    It is worth adding that this is a small app run by one person, not a company
+    with a security team. It is built carefully, but nobody should give it
+    information whose exposure would be serious. It holds what you eat, not your
+    money.
   </p>
 
   <h2>If this page changes</h2>
@@ -334,10 +349,10 @@
 
   <h2>Contact</h2>
   <p>
-    <a href="mailto:support@pantrimony.com">support@pantrimony.com</a> — for any
+    <a href="mailto:support@pantrimony.com">support@pantrimony.com</a>, for any
     question, correction, copy, deletion or complaint. If a complaint is not
-    resolved to your satisfaction, the Data Protection Board of India can be
-    approached.
+    resolved to your satisfaction, you can approach the Data Protection Board of
+    India.
   </p>
 
   <footer>
