@@ -346,7 +346,12 @@
     <li><strong>Anonymised history</strong>, kept, as described above.</li>
     <li><strong>Join attempts</strong>, 30 days.</li>
     <li><strong>Backups</strong>, 30 days, then deleted automatically.</li>
-    <li><strong>Sessions</strong>, until they expire or you sign out.</li>
+    <li>
+      <strong>Sessions</strong>, until they expire, which is at most 30 days. Signing
+      out stops a session working at once, but its record is kept, unusable, until
+      that date. That way a stolen copy used later is spotted, and every session is
+      ended.
+    </li>
   </ul>
 
   <h2 id="security">Security</h2>
