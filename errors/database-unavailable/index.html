@@ -103,6 +103,28 @@
     }
     ul.index a:hover { text-decoration: underline; }
     ul.index span { color: var(--ink-3); font-size: .8125rem; }
+    /* Pages with a section index use the width of a wide screen for it,
+       rather than centring one narrow column in a sea of background. The text
+       column itself stays readable; the space goes to navigation. */
+    .wrap.wide { max-width: 76rem; }
+    .toc { display: none; }
+    h2 { scroll-margin-top: 1.5rem; }
+    @media (min-width: 64rem) {
+      .layout {
+        display: grid; grid-template-columns: 15rem minmax(0, 54rem); gap: 5rem;
+      }
+      .toc { display: block; position: sticky; top: 2rem; align-self: start; }
+    }
+    .toc-title {
+      margin: .9rem 0 .7rem; font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .08em; color: var(--ink-3);
+    }
+    .toc ol { list-style: none; margin: 0; padding: 0; }
+    .toc a {
+      display: block; padding: .32rem 0; font-size: .875rem;
+      color: var(--ink-2); text-decoration: none;
+    }
+    .toc a:hover { color: var(--accent); }
     /* A type URI is one long unbreakable token; without this it decides the
        page's width on a phone and everything else scrolls sideways with it. */
     dl.machine dd { overflow-wrap: anywhere; }

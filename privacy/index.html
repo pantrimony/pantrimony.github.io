@@ -103,6 +103,28 @@
     }
     ul.index a:hover { text-decoration: underline; }
     ul.index span { color: var(--ink-3); font-size: .8125rem; }
+    /* Pages with a section index use the width of a wide screen for it,
+       rather than centring one narrow column in a sea of background. The text
+       column itself stays readable; the space goes to navigation. */
+    .wrap.wide { max-width: 76rem; }
+    .toc { display: none; }
+    h2 { scroll-margin-top: 1.5rem; }
+    @media (min-width: 64rem) {
+      .layout {
+        display: grid; grid-template-columns: 15rem minmax(0, 54rem); gap: 5rem;
+      }
+      .toc { display: block; position: sticky; top: 2rem; align-self: start; }
+    }
+    .toc-title {
+      margin: .9rem 0 .7rem; font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .08em; color: var(--ink-3);
+    }
+    .toc ol { list-style: none; margin: 0; padding: 0; }
+    .toc a {
+      display: block; padding: .32rem 0; font-size: .875rem;
+      color: var(--ink-2); text-decoration: none;
+    }
+    .toc a:hover { color: var(--accent); }
     /* A type URI is one long unbreakable token; without this it decides the
        page's width on a phone and everything else scrolls sideways with it. */
     dl.machine dd { overflow-wrap: anywhere; }
@@ -115,15 +137,15 @@
     </style>
 </head>
 <body>
-<div class="wrap">
+<div class="wrap wide">
   <a class="home" href="/">&larr; pantrimony.com</a>
-  <h1>Privacy</h1>
+<div class="layout"><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#who-is-responsible">Who is responsible</a></li><li><a href="#what-is-collected-and-why">What is collected, and why</a></li><li><a href="#what-is-not-collected">What is not collected</a></li><li><a href="#where-it-is-stored">Where it is stored</a></li><li><a href="#who-else-sees-it">Who else sees it</a></li><li><a href="#your-cook">Your cook</a></li><li><a href="#children">Children</a></li><li><a href="#what-you-can-ask-for">What you can ask for</a></li><li><a href="#what-deletion-does">What deletion does</a></li><li><a href="#how-long-things-are-kept">How long things are kept</a></li><li><a href="#security">Security</a></li><li><a href="#if-this-page-changes">If this page changes</a></li><li><a href="#contact">Contact</a></li></ol></nav><main>  <h1>Privacy</h1>
   <p class="lead">
     Pantrimony is a household app. It holds what your household eats, who is in
     it, and how to reach the person who cooks. This page says what that means.
   </p>
 
-  <h2>Who is responsible</h2>
+  <h2 id="who-is-responsible">Who is responsible</h2>
   <p>
     Pantrimony is run by <strong>Harit Mohan</strong>, an individual in
     Bengaluru, India. It is not a company. Questions, corrections and complaints
@@ -136,7 +158,7 @@
     resolved, you can take it to the Data Protection Board of India.
   </p>
 
-  <h2>What is collected, and why</h2>
+  <h2 id="what-is-collected-and-why">What is collected, and why</h2>
   <p>This is the whole list.</p>
   <dl>
     <dt>Phone number</dt>
@@ -186,7 +208,7 @@
     <dd>Hashed session tokens and their expiry. Never the token itself.</dd>
   </dl>
 
-  <h2>What is not collected</h2>
+  <h2 id="what-is-not-collected">What is not collected</h2>
   <ul class="plain">
     <li>No analytics, and no tracking. No Google Analytics, no third-party SDK watching what you tap.</li>
     <li>No advertising, and no advertising identifiers.</li>
@@ -195,7 +217,7 @@
     <li>Nothing is sold, rented, or shared for anyone else's marketing.</li>
   </ul>
 
-  <h2>Where it is stored</h2>
+  <h2 id="where-it-is-stored">Where it is stored</h2>
   <p>
     On a server in <strong>Mumbai, India</strong>, rented from Oracle Cloud. Your
     data does not leave India in the ordinary course of using the app. The
@@ -211,7 +233,7 @@
     the limit of that.
   </p>
 
-  <h2>Who else sees it</h2>
+  <h2 id="who-else-sees-it">Who else sees it</h2>
   <p>Only services the app needs, and only what each one needs.</p>
   <dl>
     <dt>Resend</dt>
@@ -240,7 +262,7 @@
     analytics vendor in this list, because none is used.
   </p>
 
-  <h2>Your cook</h2>
+  <h2 id="your-cook">Your cook</h2>
   <p>
     The point of Pantrimony is to tell the person who cooks what to cook. Doing
     that means holding <strong>a phone number belonging to someone who does not
@@ -270,14 +292,14 @@
     and the number will be removed. You do not need an account to ask.
   </p>
 
-  <h2>Children</h2>
+  <h2 id="children">Children</h2>
   <p>
     Pantrimony is not meant for anyone under 18, and accounts must be created by
     adults. A household may of course cook for children. The app simply has no
     account for them, and none should be created on their behalf.
   </p>
 
-  <h2>What you can ask for</h2>
+  <h2 id="what-you-can-ask-for">What you can ask for</h2>
   <dl>
     <dt>A copy of your data</dt>
     <dd>Write to support@pantrimony.com and you will get it.</dd>
@@ -298,7 +320,7 @@
     </dd>
   </dl>
 
-  <h2>What deletion does</h2>
+  <h2 id="what-deletion-does">What deletion does</h2>
   <p>
     When you delete your account, your name becomes "Former member", your email
     is erased, your phone number is replaced with a value that cannot be dialled,
@@ -318,7 +340,7 @@
     well, ask, and it will be discussed with the household.
   </p>
 
-  <h2>How long things are kept</h2>
+  <h2 id="how-long-things-are-kept">How long things are kept</h2>
   <ul class="plain">
     <li><strong>Your account</strong>, until you delete it.</li>
     <li><strong>Anonymised history</strong>, kept, as described above.</li>
@@ -327,7 +349,7 @@
     <li><strong>Sessions</strong>, until they expire or you sign out.</li>
   </ul>
 
-  <h2>Security</h2>
+  <h2 id="security">Security</h2>
   <p>
     Passwords are hashed with Argon2. Session tokens are stored hashed. Traffic
     is encrypted in transit. The database is not exposed to the internet, and
@@ -340,21 +362,21 @@
     money.
   </p>
 
-  <h2>If this page changes</h2>
+  <h2 id="if-this-page-changes">If this page changes</h2>
   <p>
     Material changes will be announced in the app before they take effect, and
     the app records which version of this policy you agreed to. This page always
     shows the current one.
   </p>
 
-  <h2>Contact</h2>
+  <h2 id="contact">Contact</h2>
   <p>
     <a href="mailto:support@pantrimony.com">support@pantrimony.com</a>, for any
     question, correction, copy, deletion or complaint. If a complaint is not
     resolved to your satisfaction, you can approach the Data Protection Board of
     India.
   </p>
-
+</main></div>
   <footer>
     Pantrimony · <a href="https://pantrimony.com/">pantrimony.com</a>
   </footer>
