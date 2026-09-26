@@ -206,6 +206,17 @@
 
     <dt>Sign-in sessions</dt>
     <dd>Hashed session tokens and their expiry. Never the token itself.</dd>
+
+    <dt>Problem and crash reports</dt>
+    <dd>
+      Only if the app crashes, or you send a report. A crash report holds what
+      went wrong, which screen you were on, the app's build number, and a
+      scrambled form of the network address it came from, used only to limit
+      how many reports one address can send. A report you send also holds
+      what you wrote. Phone numbers, email
+      addresses and sign-in tokens are removed before either is stored.
+      Deleted after 90 days.
+    </dd>
   </dl>
 
   <h2 id="what-is-not-collected">What is not collected</h2>
