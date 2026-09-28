@@ -145,9 +145,10 @@
     type the API can return. Each is the <code>type</code> URI carried in the
     response body, and each resolves to a page describing that failure.
   </p>
-  <h2>63 types</h2>
+  <h2>72 types</h2>
   <ul class="index">
     <li><a href="/errors/account-deleted/">account-deleted</a> <span>· 403 · households</span></li>
+    <li><a href="/errors/account-exists-with-password/">account-exists-with-password</a> <span>· 409 · auth</span></li>
     <li><a href="/errors/admin-required/">admin-required</a> <span>· 403 · households</span></li>
     <li><a href="/errors/already-a-member/">already-a-member</a> <span>· 409 · households</span></li>
     <li><a href="/errors/assignee-not-a-member/">assignee-not-a-member</a> <span>· 422 · planning</span></li>
@@ -155,11 +156,14 @@
     <li><a href="/errors/ballot-not-from-snapshot/">ballot-not-from-snapshot</a> <span>· 422 · voting</span></li>
     <li><a href="/errors/briefs-need-test/">briefs-need-test</a> <span>· 409 · households</span></li>
     <li><a href="/errors/client-outdated/">client-outdated</a> <span>· 426 · core</span></li>
+    <li><a href="/errors/consent-required/">consent-required</a> <span>· 422 · auth</span></li>
     <li><a href="/errors/crypto-not-configured/">crypto-not-configured</a> <span>· 503 · core</span></li>
     <li><a href="/errors/database-unavailable/">database-unavailable</a> <span>· 503 · core</span></li>
     <li><a href="/errors/dish-archived/">dish-archived</a> <span>· 409 · catalog</span></li>
     <li><a href="/errors/dish-not-found/">dish-not-found</a> <span>· 404 · catalog</span></li>
     <li><a href="/errors/food-not-found/">food-not-found</a> <span>· 404 · inventory</span></li>
+    <li><a href="/errors/google-email-mismatch/">google-email-mismatch</a> <span>· 409 · auth</span></li>
+    <li><a href="/errors/google-subject-already-linked/">google-subject-already-linked</a> <span>· 409 · auth</span></li>
     <li><a href="/errors/http-401/">http-401</a> <span>· 401 · core</span></li>
     <li><a href="/errors/http-403/">http-403</a> <span>· 403 · core</span></li>
     <li><a href="/errors/http-404/">http-404</a> <span>· 404 · core</span></li>
@@ -167,6 +171,7 @@
     <li><a href="/errors/http-500/">http-500</a> <span>· 500 · core</span></li>
     <li><a href="/errors/invalid-ballot/">invalid-ballot</a> <span>· 422 · voting</span></li>
     <li><a href="/errors/invalid-credentials/">invalid-credentials</a> <span>· 401 · auth</span></li>
+    <li><a href="/errors/invalid-google-token/">invalid-google-token</a> <span>· 401 · auth</span></li>
     <li><a href="/errors/invalid-invite-code/">invalid-invite-code</a> <span>· 403 · households</span></li>
     <li><a href="/errors/invalid-phone/">invalid-phone</a> <span>· 422 · households</span></li>
     <li><a href="/errors/invalid-poll-food/">invalid-poll-food</a> <span>· 422 · polls</span></li>
@@ -174,7 +179,9 @@
     <li><a href="/errors/invalid-schedule/">invalid-schedule</a> <span>· 422 · households</span></li>
     <li><a href="/errors/invalid-signature/">invalid-signature</a> <span>· 401 · notifications</span></li>
     <li><a href="/errors/invalid-voting-window/">invalid-voting-window</a> <span>· 422 · voting</span></li>
+    <li><a href="/errors/inventory-item-not-found/">inventory-item-not-found</a> <span>· 404 · inventory</span></li>
     <li><a href="/errors/last-admin-must-transfer/">last-admin-must-transfer</a> <span>· 409 · households</span></li>
+    <li><a href="/errors/link-expired/">link-expired</a> <span>· 401 · auth</span></li>
     <li><a href="/errors/meal-not-configured/">meal-not-configured</a> <span>· 422 · planning</span></li>
     <li><a href="/errors/meal-slot-not-editable/">meal-slot-not-editable</a> <span>· 409 · planning</span></li>
     <li><a href="/errors/meal-slot-not-found/">meal-slot-not-found</a> <span>· 404 · planning</span></li>
@@ -185,6 +192,7 @@
     <li><a href="/errors/not-a-member/">not-a-member</a> <span>· 403 · households</span></li>
     <li><a href="/errors/not-authenticated/">not-authenticated</a> <span>· 401 · auth</span></li>
     <li><a href="/errors/notification-not-found/">notification-not-found</a> <span>· 404 · notifications</span></li>
+    <li><a href="/errors/onboarding-incomplete/">onboarding-incomplete</a> <span>· 409 · households</span></li>
     <li><a href="/errors/phone-already-registered/">phone-already-registered</a> <span>· 409 · auth</span></li>
     <li><a href="/errors/poll-already-live/">poll-already-live</a> <span>· 409 · polls</span></li>
     <li><a href="/errors/poll-not-found/">poll-not-found</a> <span>· 404 · polls</span></li>
@@ -206,6 +214,7 @@
     <li><a href="/errors/too-many-join-attempts/">too-many-join-attempts</a> <span>· 429 · households</span></li>
     <li><a href="/errors/too-many-login-attempts/">too-many-login-attempts</a> <span>· 429 · auth</span></li>
     <li><a href="/errors/too-many-reports/">too-many-reports</a> <span>· 429 · reports</span></li>
+    <li><a href="/errors/too-many-requests/">too-many-requests</a> <span>· 429 · auth</span></li>
     <li><a href="/errors/undo-expired/">undo-expired</a> <span>· 409 · planning</span></li>
     <li><a href="/errors/validation-error/">validation-error</a> <span>· 422 · core</span></li>
     <li><a href="/errors/voting-window-elapsed/">voting-window-elapsed</a> <span>· 409 · voting</span></li>
