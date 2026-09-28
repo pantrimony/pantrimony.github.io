@@ -145,7 +145,7 @@
     type the API can return. Each is the <code>type</code> URI carried in the
     response body, and each resolves to a page describing that failure.
   </p>
-  <h2>48 types</h2>
+  <h2>63 types</h2>
   <ul class="index">
     <li><a href="/errors/account-deleted/">account-deleted</a> <span>· 403 · households</span></li>
     <li><a href="/errors/admin-required/">admin-required</a> <span>· 403 · households</span></li>
@@ -153,7 +153,9 @@
     <li><a href="/errors/assignee-not-a-member/">assignee-not-a-member</a> <span>· 422 · planning</span></li>
     <li><a href="/errors/assignee-required/">assignee-required</a> <span>· 422 · planning</span></li>
     <li><a href="/errors/ballot-not-from-snapshot/">ballot-not-from-snapshot</a> <span>· 422 · voting</span></li>
+    <li><a href="/errors/briefs-need-test/">briefs-need-test</a> <span>· 409 · households</span></li>
     <li><a href="/errors/client-outdated/">client-outdated</a> <span>· 426 · core</span></li>
+    <li><a href="/errors/crypto-not-configured/">crypto-not-configured</a> <span>· 503 · core</span></li>
     <li><a href="/errors/database-unavailable/">database-unavailable</a> <span>· 503 · core</span></li>
     <li><a href="/errors/dish-archived/">dish-archived</a> <span>· 409 · catalog</span></li>
     <li><a href="/errors/dish-not-found/">dish-not-found</a> <span>· 404 · catalog</span></li>
@@ -166,7 +168,11 @@
     <li><a href="/errors/invalid-ballot/">invalid-ballot</a> <span>· 422 · voting</span></li>
     <li><a href="/errors/invalid-credentials/">invalid-credentials</a> <span>· 401 · auth</span></li>
     <li><a href="/errors/invalid-invite-code/">invalid-invite-code</a> <span>· 403 · households</span></li>
+    <li><a href="/errors/invalid-phone/">invalid-phone</a> <span>· 422 · households</span></li>
+    <li><a href="/errors/invalid-poll-food/">invalid-poll-food</a> <span>· 422 · polls</span></li>
     <li><a href="/errors/invalid-refresh-token/">invalid-refresh-token</a> <span>· 401 · auth</span></li>
+    <li><a href="/errors/invalid-schedule/">invalid-schedule</a> <span>· 422 · households</span></li>
+    <li><a href="/errors/invalid-signature/">invalid-signature</a> <span>· 401 · notifications</span></li>
     <li><a href="/errors/invalid-voting-window/">invalid-voting-window</a> <span>· 422 · voting</span></li>
     <li><a href="/errors/last-admin-must-transfer/">last-admin-must-transfer</a> <span>· 409 · households</span></li>
     <li><a href="/errors/meal-not-configured/">meal-not-configured</a> <span>· 422 · planning</span></li>
@@ -178,20 +184,29 @@
     <li><a href="/errors/no-eligible-dishes/">no-eligible-dishes</a> <span>· 409 · suggestions</span></li>
     <li><a href="/errors/not-a-member/">not-a-member</a> <span>· 403 · households</span></li>
     <li><a href="/errors/not-authenticated/">not-authenticated</a> <span>· 401 · auth</span></li>
+    <li><a href="/errors/notification-not-found/">notification-not-found</a> <span>· 404 · notifications</span></li>
     <li><a href="/errors/phone-already-registered/">phone-already-registered</a> <span>· 409 · auth</span></li>
+    <li><a href="/errors/poll-already-live/">poll-already-live</a> <span>· 409 · polls</span></li>
+    <li><a href="/errors/poll-not-found/">poll-not-found</a> <span>· 404 · polls</span></li>
+    <li><a href="/errors/poll-not-open/">poll-not-open</a> <span>· 409 · polls</span></li>
+    <li><a href="/errors/poll-stale/">poll-stale</a> <span>· 409 · polls</span></li>
     <li><a href="/errors/range-too-wide/">range-too-wide</a> <span>· 422 · planning</span></li>
     <li><a href="/errors/round-already-open/">round-already-open</a> <span>· 409 · voting</span></li>
     <li><a href="/errors/round-closed/">round-closed</a> <span>· 409 · voting</span></li>
     <li><a href="/errors/round-not-closable/">round-not-closable</a> <span>· 409 · voting</span></li>
     <li><a href="/errors/round-not-found/">round-not-found</a> <span>· 404 · voting</span></li>
     <li><a href="/errors/round-not-open/">round-not-open</a> <span>· 409 · voting</span></li>
+    <li><a href="/errors/settings-changed/">settings-changed</a> <span>· 409 · households</span></li>
     <li><a href="/errors/skeleton-dish-not-found/">skeleton-dish-not-found</a> <span>· 404 · planning</span></li>
     <li><a href="/errors/slot-in-the-past/">slot-in-the-past</a> <span>· 409 · planning</span></li>
     <li><a href="/errors/slot-not-skipped/">slot-not-skipped</a> <span>· 409 · planning</span></li>
     <li><a href="/errors/slot-not-votable/">slot-not-votable</a> <span>· 409 · voting</span></li>
     <li><a href="/errors/stale-inventory-version/">stale-inventory-version</a> <span>· 409 · inventory</span></li>
+    <li><a href="/errors/test-brief-refused/">test-brief-refused</a> <span>· 409 · notifications</span></li>
     <li><a href="/errors/too-many-join-attempts/">too-many-join-attempts</a> <span>· 429 · households</span></li>
+    <li><a href="/errors/too-many-login-attempts/">too-many-login-attempts</a> <span>· 429 · auth</span></li>
     <li><a href="/errors/too-many-reports/">too-many-reports</a> <span>· 429 · reports</span></li>
+    <li><a href="/errors/undo-expired/">undo-expired</a> <span>· 409 · planning</span></li>
     <li><a href="/errors/validation-error/">validation-error</a> <span>· 422 · core</span></li>
     <li><a href="/errors/voting-window-elapsed/">voting-window-elapsed</a> <span>· 409 · voting</span></li>
     <li><a href="/errors/wrong-tracking-shape/">wrong-tracking-shape</a> <span>· 422 · inventory</span></li>
