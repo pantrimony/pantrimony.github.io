@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="referrer" content="no-referrer">
-<title>onboarding-incomplete · Pantrimony errors</title>
-<meta name="description" content="Not quite there yet. Add a few more favourites or staples first.">
-<meta property="og:title" content="onboarding-incomplete · Pantrimony errors">
-<meta property="og:description" content="Not quite there yet. Add a few more favourites or staples first.">
+<title>Pantrimony</title>
+<meta name="description" content="Pantrimony is the app a household uses to plan its meals and vote on what to cook.">
+<meta property="og:title" content="Pantrimony">
+<meta property="og:description" content="Pantrimony is the app a household uses to plan its meals and vote on what to cook.">
 <style>
 :root {
   --paper: #EDE9E0;
@@ -360,15 +360,67 @@ ul.plain li { margin: 0 0 .45rem; }
 <body>
 <div class="grain" aria-hidden="true"></div>
 <div class="fleck" aria-hidden="true"></div>
-<main class="view">
-<header class="strip"><div class="strip-face"><div class="strip-grain" aria-hidden="true"></div><div class="strip-inner"><div class="strip-main"><a class="back" href="/errors/" aria-label="All error types"><svg class="arrow" viewBox="0 0 28 28" aria-hidden="true"><path d="M23.4 14.6 C18.2 13.7, 12.6 13.8, 6.4 14.3"/><path d="M12.2 8 C10 10.4, 7.9 12.5, 5.6 14.3 C7.9 15.9, 10 18.1, 12 20.6"/></svg></a><div class="strip-t"><p class="strip-kick">Pantrimony · error type</p><h1>onboarding-incomplete</h1></div></div><p class="strip-sub">HTTP 409 · households</p></div></div></header>
+<main class="view" id="view-missing">
+<header class="strip"><div class="strip-face"><div class="strip-grain" aria-hidden="true"></div><div class="strip-inner"><div class="strip-main"><div class="strip-t"><p class="strip-kick">Pantrimony</p><h1>Page not found</h1></div></div><p class="strip-sub">Nothing is at this address</p></div></div></header>
 <div class="wbody">
-<article class="clip"><div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.02"/></svg><span class="ct">What this page is</span></div><p class="say">This URL is the <code>type</code> identifier in an <a href="https://www.rfc-editor.org/rfc/rfc9457.html">RFC 9457</a> problem response from the Pantrimony API. It names the kind of failure; it is not a support page, and it carries no details of any particular request.</p></article>
-<article class="clip"><div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.02"/></svg><span class="ct">What the app shows</span></div><p class="copy">Not quite there yet. Add a few more favourites or staples first.</p></article>
-<article class="clip"><div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.02"/></svg><span class="ct">What to do</span></div><p class="say">Nothing can be retried. The request will not succeed as it stands.</p></article>
-<article class="clip"><div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h9"/></svg><span class="ct">Details</span></div><dl class="machine"><dt>Type URI</dt><dd>https://pantrimony.com/errors/onboarding-incomplete</dd><dt>HTTP status</dt><dd>409</dd><dt>Module</dt><dd>households</dd><dt>Surface</dt><dd>toast</dd></dl><p class="hint">Generated from the error deck, so this page and the app's copy cannot drift apart.</p></article>
+<article class="clip">
+  <div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.02"/></svg><span class="ct">Not here</span></div>
+  <p class="say">There is no page at this address on <b>pantrimony.com</b>. If a link brought you here, check that all of it was copied.</p>
+</article>
+</div>
+</main>
+<main class="view" id="view-vote" hidden>
+<header class="strip"><div class="strip-face"><div class="strip-grain" aria-hidden="true"></div><div class="strip-inner"><div class="strip-main"><div class="strip-t"><p class="strip-kick">Pantrimony · a household vote</p><h1>This vote opens in the app</h1></div></div><p class="strip-sub">Nothing to sign in to here</p></div></div></header>
+<div class="wbody">
+<div class="cols">
+  <div class="stack">
+    <article class="clip">
+      <div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.02"/></svg><span class="ct">What this is</span></div>
+      <p class="say">This link is a vote on a meal in <b>Pantrimony</b>, the app a household uses to plan its meals and vote on what to cook. The vote lives in the app, so this page cannot show it.</p>
+    </article>
+    <article class="clip only-android">
+      <div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6.6 9.5 17.1 4 11.6"/></svg><span class="ct">Pantrimony on this phone?</span></div>
+      <a class="btn hi full" data-open-app href="#">Open in Pantrimony</a>
+      <p class="hint">Opens the vote if this phone has the app. If nothing happens, it does not have it yet.</p>
+    </article>
+    <article class="clip only-other">
+      <div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.02"/></svg><span class="ct">Open it on your phone</span></div>
+      <p class="say">Pantrimony is a phone app. Open this link on the Android phone you use it on, and the vote opens there.</p>
+    </article>
+  </div>
+  <article class="clip">
+    <div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="ct"><span class="only-android">Not yet?</span><span class="only-other">Not on your phone yet?</span></span></div>
+    <p class="say">Ask whoever sent you this link how to get the app.</p>
+    <p class="hint">Android phones only, for now.</p>
+    <ol class="steps">
+      <li><b>Install it</b>, then sign in or make an account.</li>
+      <li><b>Join your household</b> with its invite code. Ask whoever sent you this link.</li>
+      <li><b>Tap this link again</b>, or open Today in the app. If you were in the household when the vote opened, it is there until it closes.</li>
+    </ol>
+    <p class="hint"><b>Joining now?</b> The app will tell you: “You joined after this vote opened. You can vote from the next one.”</p>
+  </article>
+</div>
 </div>
 </main>
 <footer class="wfoot">Pantrimony · <a href="/">pantrimony.com</a> · <a href="/privacy/">Privacy</a></footer>
+<script>
+function openInApp(path) {
+  var intent = 'intent://pantrimony.com' + path + '#Intent;scheme=https;package=app.pantrimony;'
+    + 'S.browser_fallback_url=' + encodeURIComponent(location.href) + ';end';
+  var links = document.querySelectorAll('[data-open-app]');
+  for (var i = 0; i < links.length; i++) links[i].href = intent;
+  if (/Android/i.test(navigator.userAgent)) document.documentElement.classList.add('android');
+}
+var VOTE_PATH = /^\/households\/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\/vote\/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\/?$/i;
+var vote = VOTE_PATH.exec(location.pathname);
+if (vote) {
+  document.getElementById('view-missing').hidden = true;
+  document.getElementById('view-vote').hidden = false;
+  document.title = "This vote opens in the app \u00b7 Pantrimony";
+  openInApp('/households/' + vote[1] + '/vote/' + vote[2]);
+} else {
+  document.title = "Page not found \u00b7 Pantrimony";
+}
+</script>
 </body>
 </html>

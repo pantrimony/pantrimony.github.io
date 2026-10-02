@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="referrer" content="no-referrer">
-<title>onboarding-incomplete · Pantrimony errors</title>
-<meta name="description" content="Not quite there yet. Add a few more favourites or staples first.">
-<meta property="og:title" content="onboarding-incomplete · Pantrimony errors">
-<meta property="og:description" content="Not quite there yet. Add a few more favourites or staples first.">
+<meta name="robots" content="noindex">
+<title>Sign in on your phone · Pantrimony</title>
+<meta name="description" content="This page cannot sign you in">
+<meta property="og:title" content="Sign in on your phone · Pantrimony">
+<meta property="og:description" content="This page cannot sign you in">
 <style>
 :root {
   --paper: #EDE9E0;
@@ -361,14 +362,42 @@ ul.plain li { margin: 0 0 .45rem; }
 <div class="grain" aria-hidden="true"></div>
 <div class="fleck" aria-hidden="true"></div>
 <main class="view">
-<header class="strip"><div class="strip-face"><div class="strip-grain" aria-hidden="true"></div><div class="strip-inner"><div class="strip-main"><a class="back" href="/errors/" aria-label="All error types"><svg class="arrow" viewBox="0 0 28 28" aria-hidden="true"><path d="M23.4 14.6 C18.2 13.7, 12.6 13.8, 6.4 14.3"/><path d="M12.2 8 C10 10.4, 7.9 12.5, 5.6 14.3 C7.9 15.9, 10 18.1, 12 20.6"/></svg></a><div class="strip-t"><p class="strip-kick">Pantrimony · error type</p><h1>onboarding-incomplete</h1></div></div><p class="strip-sub">HTTP 409 · households</p></div></div></header>
+<header class="strip"><div class="strip-face"><div class="strip-grain" aria-hidden="true"></div><div class="strip-inner"><div class="strip-main"><div class="strip-t"><p class="strip-kick">Pantrimony · sign in</p><h1>Sign in on your phone</h1></div></div><p class="strip-sub">This page cannot sign you in</p></div></div></header>
 <div class="wbody">
-<article class="clip"><div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.02"/></svg><span class="ct">What this page is</span></div><p class="say">This URL is the <code>type</code> identifier in an <a href="https://www.rfc-editor.org/rfc/rfc9457.html">RFC 9457</a> problem response from the Pantrimony API. It names the kind of failure; it is not a support page, and it carries no details of any particular request.</p></article>
-<article class="clip"><div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.02"/></svg><span class="ct">What the app shows</span></div><p class="copy">Not quite there yet. Add a few more favourites or staples first.</p></article>
-<article class="clip"><div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.02"/></svg><span class="ct">What to do</span></div><p class="say">Nothing can be retried. The request will not succeed as it stands.</p></article>
-<article class="clip"><div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h9"/></svg><span class="ct">Details</span></div><dl class="machine"><dt>Type URI</dt><dd>https://pantrimony.com/errors/onboarding-incomplete</dd><dt>HTTP status</dt><dd>409</dd><dt>Module</dt><dd>households</dd><dt>Surface</dt><dd>toast</dd></dl><p class="hint">Generated from the error deck, so this page and the app's copy cannot drift apart.</p></article>
+<article class="clip only-android">
+  <div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6.6 9.5 17.1 4 11.6"/></svg><span class="ct">Pantrimony on this phone?</span></div>
+  <a class="btn hi full" data-open-app href="#">Open in Pantrimony</a>
+  <p class="hint">Hands this link to the app, if this phone has it. Nothing is used up here; the app does the rest.</p>
+</article>
+<div class="cols">
+  <article class="clip">
+    <div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.6" y="5.4" width="16.8" height="13.2" rx="1.8"/><path d="M3.6 7.4 12 13l8.4-5.6"/></svg><span class="ct">Open the email on your phone</span></div>
+    <p class="say">This link, from a sign-in email or the email that confirms a new account, signs you in to the <b>Pantrimony</b> app. Open the same email on the phone you use Pantrimony on, and tap the link there.</p>
+    <p class="say">Opening it here did not use it up.</p>
+  </article>
+  <article class="clip">
+    <div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.6" y="10.4" width="14.8" height="10" rx="1.8"/><path d="M8.4 10.4V7.8a3.6 3.6 0 0 1 7.2 0v2.6"/></svg><span class="ct">Or type the code</span></div>
+    <p class="say">The same email has a <b>6-digit code</b>. Type it into the app, on its Check email screen. The code works on any phone with Pantrimony.</p>
+    <p class="hint">Either one works once, for a short while. If they have run out, ask for a new email from the app.</p>
+  </article>
+</div>
+<article class="clip quiet only-android">
+  <div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="ct">No Pantrimony on this phone?</span></div>
+  <p class="say">Ask whoever sent you this link how to get the app.</p>
+  <p class="hint">Android phones only, for now.</p>
+</article>
 </div>
 </main>
 <footer class="wfoot">Pantrimony · <a href="/">pantrimony.com</a> · <a href="/privacy/">Privacy</a></footer>
+<script>
+function openInApp(path) {
+  var intent = 'intent://pantrimony.com' + path + '#Intent;scheme=https;package=app.pantrimony;'
+    + 'S.browser_fallback_url=' + encodeURIComponent(location.href) + ';end';
+  var links = document.querySelectorAll('[data-open-app]');
+  for (var i = 0; i < links.length; i++) links[i].href = intent;
+  if (/Android/i.test(navigator.userAgent)) document.documentElement.classList.add('android');
+}
+openInApp('/auth/email/verify' + location.search);
+</script>
 </body>
 </html>
