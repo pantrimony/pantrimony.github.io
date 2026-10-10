@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<title>Delete your account · Pantrimony</title>
+<meta name="description" content="In the app, or by email without it">
+<meta property="og:title" content="Delete your account · Pantrimony">
+<meta property="og:description" content="In the app, or by email without it">
+<style>
+:root {
+  --paper: #EDE9E0;
+  --paper-2: #E2DDD2;
+  --paper-3: #D6D0C4;
+  --ink: #111111;
+  --ink-2: #3A3A3A;
+  --ink-3: #4E4A44;
+  --line: rgba(17, 17, 17, .88);
+  --line-soft: rgba(17, 17, 17, .28);
+  --wash: rgba(17, 17, 17, .05);
+  --strip: #456B50;
+  --strip-edge: #365640;
+  --strip-ink: #F4F1E8;
+  --strip-ink-2: rgba(244, 241, 232, .88);
+  --hi: #5F8A68;
+  --hi-ink: #FFFFFF;
+  --hi-wash: rgba(95, 138, 104, .18);
+  --hi-edge: rgba(70, 105, 78, .50);
+  --hi-text: #3C5A45;
+  --hi-chip: #3C5A45;
+  --stamp: #A84840;
+  --stamp-text: #7E332D;
+  --stamp-wash: rgba(168, 72, 64, .10);
+  --stamp-line: rgba(168, 72, 64, .55);
+  --tape: rgba(255, 250, 220, .55);
+  --gl-1: #1A1A1A;
+  --gl-2: #4A4A4A;
+  --lvl-full: #295C33;
+  --lvl-low: #8A4D0C;
+  --lvl-low-dim: #7E460B;
+  --lvl-out: #A84840;
+  --lvl-track: rgba(17, 17, 17, .14);
+  --wash-press: rgba(17, 17, 17, .11);
+  --strip-ink-wash: rgba(244, 241, 232, .10);
+  --strip-ink-press: rgba(244, 241, 232, .28);
+  --hi-mark: rgba(95, 138, 104, .32);
+  --hi-bar: #5F8A68;
+  --dim-ink: rgba(17, 17, 17, .72);
+  --veil: rgba(17, 17, 17, .48);
+  --tape-edge: rgba(140, 130, 80, .45);
+  --tape-shine: rgba(255, 255, 255, .22);
+  --edge-hi: rgba(255, 255, 255, .72);
+  --lvl-out-track: rgba(168, 72, 64, .22);
+  --c1: #6E5310;
+  --c2: #8B4540;
+  --c3: #4A6340;
+  --c4: #3E5A6E;
+  --stamp-heavy: rgba(168, 72, 64, .22);
+  --stamp-thin: rgba(168, 72, 64, .06);
+  --stamp-fill: rgba(168, 72, 64, .10);
+  --meter-track: rgba(17, 17, 17, .12);
+  --grain-o: 0.06;
+  --fleck-o: 0.07;
+  --strip-grain-o: 0.1;
+  --gl-2o: 0.38;
+  --shadow-card: 0 2px 8px rgba(17, 17, 17, .10), 0 1px 3px rgba(17, 17, 17, .06);
+  --shadow-tile: 1.5px 1.5px 0 rgba(17, 17, 17, .18);
+  --shadow-strip: 0 4px 0 rgba(17, 17, 17, .18);
+}
+@media (prefers-color-scheme: dark) {
+:root {
+  --paper: #161512;
+  --paper-2: #1E1C18;
+  --paper-3: #26231E;
+  --ink: #F0EBE3;
+  --ink-2: #C4BDB2;
+  --ink-3: #9A9286;
+  --line: rgba(240, 235, 227, .78);
+  --line-soft: rgba(240, 235, 227, .28);
+  --wash: rgba(255, 255, 255, .06);
+  --strip: #2A3D30;
+  --strip-edge: #1E2E24;
+  --strip-ink: #E8F0E9;
+  --strip-ink-2: rgba(232, 240, 233, .88);
+  --hi: #7AAD84;
+  --hi-ink: #0C1410;
+  --hi-wash: rgba(122, 173, 132, .14);
+  --hi-edge: rgba(122, 173, 132, .48);
+  --hi-text: #8FBF98;
+  --hi-chip: #7AAD84;
+  --stamp: #E07A70;
+  --stamp-text: #E09A92;
+  --stamp-wash: rgba(224, 122, 112, .14);
+  --stamp-line: rgba(224, 122, 112, .55);
+  --tape: rgba(90, 85, 60, .48);
+  --gl-1: #EDE6DA;
+  --gl-2: #A89E90;
+  --lvl-full: #6FBF7A;
+  --lvl-low: #E0A84A;
+  --lvl-low-dim: #E0A84A;
+  --lvl-out: #E07A70;
+  --lvl-track: rgba(240, 235, 227, .16);
+  --wash-press: rgba(255, 255, 255, .13);
+  --strip-ink-wash: rgba(232, 240, 233, .10);
+  --strip-ink-press: rgba(232, 240, 233, .28);
+  --hi-mark: rgba(122, 173, 132, .26);
+  --hi-bar: #7AAD84;
+  --dim-ink: rgba(240, 235, 227, .62);
+  --veil: rgba(0, 0, 0, .62);
+  --tape-edge: rgba(200, 190, 140, .35);
+  --tape-shine: rgba(255, 255, 255, .08);
+  --edge-hi: rgba(255, 238, 216, .14);
+  --lvl-out-track: rgba(224, 122, 112, .26);
+  --c1: #E0B04A;
+  --c2: #E08A82;
+  --c3: #9BB87A;
+  --c4: #7FA8C0;
+  --stamp-heavy: rgba(224, 122, 112, .28);
+  --stamp-thin: rgba(224, 122, 112, .08);
+  --stamp-fill: rgba(224, 122, 112, .12);
+  --meter-track: rgba(240, 235, 227, .14);
+  --grain-o: 0.1;
+  --fleck-o: 0.11;
+  --strip-grain-o: 0.14;
+  --gl-2o: 0.4;
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, .48), 0 1px 3px rgba(0, 0, 0, .35);
+  --shadow-tile: 1.5px 1.5px 0 rgba(0, 0, 0, .55);
+  --shadow-strip: 0 4px 0 rgba(0, 0, 0, .50);
+}
+}
+:root {
+  color-scheme: light dark;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, "Helvetica Neue", Arial,
+    sans-serif;
+  --disp: "Arial Narrow", "Helvetica Neue Condensed", "Roboto Condensed", Impact,
+    "Haettenschweiler", system-ui, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html:not(.android) .only-android, html.android .only-other { display: none !important; }
+body {
+  margin: 0; min-height: 100vh; display: flex; flex-direction: column;
+  background: var(--paper); color: var(--ink); font: 1rem/1.5 var(--font);
+}
+.grain, .fleck { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.grain {
+  opacity: var(--grain-o);
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 1px, var(--ink) 1px,
+      var(--ink) 2px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, var(--ink) 2px,
+      var(--ink) 3px);
+}
+.fleck {
+  opacity: var(--fleck-o);
+  background-image:
+    radial-gradient(circle at 20% 30%, var(--ink) 0.6px, transparent 0.8px),
+    radial-gradient(circle at 70% 55%, var(--ink) 0.5px, transparent 0.7px),
+    radial-gradient(circle at 40% 80%, var(--ink) 0.7px, transparent 0.9px),
+    radial-gradient(circle at 85% 20%, var(--ink) 0.5px, transparent 0.7px),
+    radial-gradient(circle at 10% 70%, var(--ink) 0.6px, transparent 0.8px);
+  background-size: 48px 52px, 62px 58px, 55px 64px, 70px 48px, 44px 60px;
+}
+.view {
+  position: relative; z-index: 1; flex: 1 0 auto; display: flex; flex-direction: column;
+}
+
+.strip {
+  position: relative; z-index: 2; margin: 0 0 2px; filter: drop-shadow(var(--shadow-strip));
+}
+.strip-face {
+  position: relative; padding: 12px 16px; background: var(--strip); color: var(--strip-ink);
+  border-top: 1px solid var(--strip-edge); border-bottom: 1px solid var(--strip-edge);
+  clip-path: polygon(0% 4%, 2.5% 1%, 6% 3.5%, 11% 0.5%, 17% 3%, 23% 0%, 30% 2.5%, 37% 0.5%, 44% 3%, 51% 0%, 58% 2%, 65% 0.5%, 72% 3.5%, 79% 0%, 86% 2.5%, 93% 0.5%, 97% 3%, 100% 1%,
+    100% 96%, 97% 99%, 92% 96.5%, 86% 100%, 80% 97%, 73% 99.5%, 66% 96%, 59% 100%, 52% 97.5%, 45% 99%, 38% 96.5%, 31% 100%, 24% 97%, 17% 99.5%, 11% 96%, 5% 99%, 0% 97%);
+}
+.strip-grain {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  opacity: var(--strip-grain-o);
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 1px, var(--strip-ink) 1px,
+      var(--strip-ink) 2px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, var(--strip-ink) 3px,
+      var(--strip-ink) 4px);
+}
+.strip-inner { position: relative; z-index: 1; }
+.strip-main { display: flex; align-items: flex-start; gap: 10px; }
+.strip-t { flex: 1 1 auto; min-width: 0; }
+.strip-kick {
+  margin: 0 0 3px; font-size: .6875rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--strip-ink-2);
+}
+.strip h1 {
+  margin: 0; font-family: var(--disp); font-weight: 900; font-size: 2rem; line-height: .9;
+  letter-spacing: -.04em; text-transform: uppercase; color: var(--strip-ink);
+  overflow-wrap: anywhere;
+    text-wrap: balance;
+}
+.strip-sub {
+  margin: 6px 0 0; font-size: .75rem; font-weight: 700; line-height: 1.25;
+  color: var(--strip-ink-2);
+}
+.back {
+  flex: 0 0 auto; width: 44px; height: 44px; margin: -3px 0 0 -4px; display: grid;
+  place-items: center; background: var(--strip-ink-wash);
+  border: 1.5px solid var(--strip-ink-2); border-radius: 2px; color: var(--strip-ink);
+}
+.back:active { background: var(--strip-ink-press); transform: translate(1px, 1px); }
+.back .arrow {
+  width: 26px; height: 26px; display: block; fill: none; stroke: currentColor;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+.wbody {
+  position: relative; z-index: 1; width: 100%; display: flex; flex-direction: column;
+  gap: 12px; padding: 12px 12px 18px;
+}
+.cols, .stack { display: grid; gap: 12px; align-items: start; }
+.clip {
+  position: relative; min-width: 0; padding: 12px; background: var(--paper-2);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card), inset 0 1px 0 var(--edge-hi);
+}
+.clip.quiet { background: var(--paper); box-shadow: none; border-color: var(--line-soft); }
+.ch {
+  display: flex; align-items: center; gap: 8px; padding-bottom: 8px; margin-bottom: 6px;
+  border-bottom: 1px solid var(--line-soft); color: var(--ink-3);
+}
+.ct {
+  flex: 1 1 auto; min-width: 0; font-family: var(--disp); font-size: .875rem;
+  font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--ink);
+}
+.i {
+  width: 14px; height: 14px; flex: 0 0 auto; fill: none; stroke: currentColor;
+  stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+}
+.say { margin: 6px 0 0; font-size: .875rem; line-height: 1.5; color: var(--ink-2); }
+.say b, .steps b { color: var(--ink); font-weight: 800; }
+.hint { margin: 8px 0 0; font-size: .78125rem; line-height: 1.4; color: var(--ink-3); }
+.hint b { color: var(--ink-2); font-weight: 700; }
+a { color: var(--hi-text); }
+a:focus-visible { outline: 2px solid var(--hi); outline-offset: 2px; }
+.btn {
+  min-height: 44px; min-width: 88px; margin-top: 12px; padding: 0 16px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  font-family: var(--disp); font-size: .8125rem; font-weight: 800; letter-spacing: .06em;
+  text-transform: uppercase; line-height: 1; text-decoration: none;
+  background: var(--paper); color: var(--ink); border: 1.5px solid var(--line);
+  border-radius: 1px; cursor: pointer;
+}
+.btn:active { background: var(--wash-press); }
+.btn.hi {
+  background: var(--hi-chip); color: var(--hi-ink); border-color: var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.btn.hi:active {
+  background: var(--hi-chip); box-shadow: 0 0 0 var(--ink); transform: translate(2px, 2px);
+}
+.btn.full { width: 100%; }
+.steps { margin: 10px 0 0; padding: 0; list-style: none; counter-reset: s; }
+.steps li {
+  position: relative; margin: 0; padding: 8px 0 8px 34px;
+  border-top: 1px solid var(--line-soft); font-size: .84375rem; line-height: 1.45;
+  color: var(--ink-2); counter-increment: s;
+}
+.steps li::before {
+  content: counter(s); position: absolute; left: 0; top: 7px; width: 24px; height: 24px;
+  display: grid; place-items: center; border: 1.5px solid var(--line);
+  background: var(--paper); font-family: var(--disp); font-size: .8125rem;
+  font-weight: 900; color: var(--ink);
+}
+.wfoot {
+  position: relative; z-index: 1; padding: 12px 12px 16px;
+  border-top: 1px solid var(--line-soft); font-size: .75rem; color: var(--ink-3);
+  text-align: center;
+}
+.wfoot a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 6px;
+  font-weight: 700; text-decoration: underline; text-underline-offset: 2px;
+}
+
+code {
+  font-family: var(--mono); font-size: .875em; background: var(--wash); padding: 1px 5px;
+}
+.copy {
+  margin: 8px 0 0; padding: 10px 12px; border-left: 3px solid var(--hi);
+  background: var(--paper); color: var(--ink); font-size: 1rem; line-height: 1.45;
+}
+dl.machine {
+  display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: .4rem 1rem;
+  margin: 8px 0 0;
+}
+dl.machine dt { color: var(--ink-3); font-size: .8125rem; }
+dl.machine dd {
+  margin: 0; font: .8125rem/1.6 var(--mono); color: var(--ink); overflow-wrap: anywhere;
+}
+ul.index { list-style: none; margin: 0; padding: 0; }
+ul.index li {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px;
+  border-bottom: 1px solid var(--line-soft);
+}
+ul.index li:last-child { border-bottom: none; }
+ul.index a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font: .875rem/1.4 var(--mono); text-decoration: none;
+}
+ul.index a:hover { text-decoration: underline; }
+ul.index span { color: var(--ink-3); font-size: .75rem; }
+
+.prose h2 {
+  margin: 1.75rem 0 .6rem; padding-bottom: 4px; border-bottom: 1.5px solid var(--line);
+  font-family: var(--disp); font-size: .875rem; font-weight: 900; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink); scroll-margin-top: 1rem;
+}
+.prose p, .prose li, .prose dd {
+  font-size: .9375rem; line-height: 1.6; color: var(--ink-2);
+}
+.prose p { margin: 0 0 .9rem; }
+.prose .lead {
+  margin: 0 0 .5rem; font-size: 1.0625rem; line-height: 1.55; color: var(--ink);
+}
+.prose dl { margin: 0 0 1rem; }
+.prose dt {
+  margin: 1rem 0 .15rem; font-size: .9375rem; font-weight: 700; color: var(--ink);
+}
+.prose dd { margin: 0; }
+.prose strong { color: var(--ink); }
+ul.plain { margin: 0 0 1rem; padding-left: 1.1rem; }
+ul.plain li { margin: 0 0 .45rem; }
+.toc { display: none; }
+.toc ol { list-style: none; margin: 0; padding: 0; }
+.toc a {
+  display: flex; align-items: center; min-height: 44px; font-size: .875rem;
+  color: var(--ink-2); text-decoration: none;
+}
+.toc a:hover { color: var(--hi-text); text-decoration: underline; }
+
+@media (min-width: 48rem) {
+  .strip-face { padding: 22px 0 20px; }
+  .strip-inner { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  .strip h1 { font-size: 2.5rem; }
+  .wbody { max-width: 880px; margin: 0 auto; padding: 22px 24px 24px; gap: 16px; }
+  .cols { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stack { gap: 16px; }
+  .say { font-size: .9375rem; }
+}
+@media (min-width: 64rem) {
+    .wbody.wide, .wide .strip-inner { max-width: calc(61rem + 72px); }
+  .layout {
+    display: grid; grid-template-columns: 15rem minmax(0, 46rem); gap: 24px;
+    align-items: start;
+  }
+  .toc { display: block; position: sticky; top: 16px; }
+}
+@media (max-width: 30rem) {
+    dl.machine { grid-template-columns: 1fr; gap: .1rem; }
+  dl.machine dt { margin-top: .6rem; }
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="fleck" aria-hidden="true"></div>
+<main class="view">
+<header class="strip"><div class="strip-face"><div class="strip-grain" aria-hidden="true"></div><div class="strip-inner"><div class="strip-main"><div class="strip-t"><p class="strip-kick">Pantrimony · account</p><h1>Delete your account</h1></div></div><p class="strip-sub">In the app, or by email without it</p></div></div></header>
+<div class="wbody">
+<div class="cols">
+  <article class="clip">
+    <div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.8" y="2.8" width="10.4" height="18.4" rx="2"/><path d="M10.8 17.6h2.4"/></svg><span class="ct">In the app</span></div>
+    <p class="say">Open <b>Pantrimony</b>, go to Settings, and tap <b>Delete account</b>. Before anything goes, the app shows what will happen to each of your households and asks you to confirm.</p>
+  </article>
+  <article class="clip">
+    <div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.6" y="5.4" width="16.8" height="13.2" rx="1.8"/><path d="M3.6 7.4 12 13l8.4-5.6"/></svg><span class="ct">Without the app</span></div>
+    <p class="say">Write to <a href="mailto:support@pantrimony.com?subject=Delete%20my%20account">support@pantrimony.com</a> with the subject <b>Delete my account</b>.</p>
+    <p class="say">Send it from the email address on the account. If the account has no email, give the phone number on the account and the name of your household.</p>
+    <p class="hint">Nothing is deleted until you have confirmed the account is yours. You will hear back within a week.</p>
+  </article>
+</div>
+<article class="clip">
+  <div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.6 6.8h14.8"/><path d="M9.6 6.8V4.6h4.8v2.2"/><path d="m6.6 6.8.9 12.6h9l.9-12.6"/></svg><span class="ct">What is deleted</span></div>
+  <p class="say">Your name, email, phone number and password, and every session on every phone. Your dish and food preferences go too, in every household you were in.</p>
+  <p class="say">A sole-member admin's household is deleted with them. With it go its kitchen, its votes, the cook's number and its invite code.</p>
+  <p class="say">A last admin's household passes to the longest-tenured member.</p>
+</article>
+<article class="clip">
+  <div class="ch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.2V12l3 1.9"/></svg><span class="ct">What is kept, and for how long</span></div>
+  <p class="say">A household's shared history stays with the people still in it: that someone bought rice on a Tuesday, and how a vote went. You show there as "Former member", and it cannot be traced back to you.</p>
+  <p class="say">Backups are kept for 30 days, then deleted, so deleted data can sit in one for up to 30 days.</p>
+  <p class="hint">The <a href="/privacy/">privacy policy</a> has the full list.</p>
+</article>
+</div>
+</main>
+<footer class="wfoot">Pantrimony · <a href="/">pantrimony.com</a> · <a href="/privacy/">Privacy</a></footer>
+</body>
+</html>
