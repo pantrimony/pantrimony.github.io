@@ -388,20 +388,34 @@ ul.plain li { margin: 0 0 .45rem; }
   <h2 id="what-is-collected-and-why">What is collected, and why</h2>
   <p>This is the whole list.</p>
   <dl>
-    <dt>Phone number</dt>
-    <dd>Identifies your account, and is how you sign in. Required.</dd>
+    <dt>Email address</dt>
+    <dd>
+      Identifies your account. Used to sign you in with a link or a 6-digit code,
+      to confirm the address is yours, and to reset a password. Never used for
+      marketing. Required.
+    </dd>
 
     <dt>Name</dt>
     <dd>So the rest of your household knows who voted, and who bought the dal.</dd>
 
-    <dt>Email address</dt>
-    <dd>Optional. Used to send a sign-in link, and nothing else.</dd>
+    <dt>Phone number</dt>
+    <dd>
+      Optional. Accounts made before email sign-in used it to sign in, and still
+      can. It is not shown to anyone else.
+    </dd>
 
     <dt>Password</dt>
     <dd>
-      Stored only as an Argon2 hash. The password itself is never written down.
+      Optional, because a code by email works instead. If you set one, it is
+      stored only as an Argon2 hash. The password itself is never written down.
       That is also why it cannot be recovered, only reset.
     </dd>
+
+    <dt>Your Google account id</dt>
+    <dd>Only if you sign in with Google, so it can sign you in again.</dd>
+
+    <dt>Your agreement to this policy</dt>
+    <dd>That you agreed, to which version, and when.</dd>
 
     <dt>Household details</dt>
     <dd>
@@ -432,6 +446,12 @@ ul.plain li { margin: 0 0 .45rem; }
       who added, bought or took each off, and when. So the dal is not bought twice.
     </dd>
 
+    <dt>The timetable</dt>
+    <dd>
+      Which dish is planned for each meal, how many it serves, who cooks it, and
+      any note for whoever cooks.
+    </dd>
+
     <dt>Votes and preferences</dt>
     <dd>
       Which dishes were suggested, how each member voted, and each member's food
@@ -449,6 +469,13 @@ ul.plain li { margin: 0 0 .45rem; }
     <dt>Sign-in sessions</dt>
     <dd>Hashed session tokens and their expiry. Never the token itself.</dd>
 
+    <dt>Sign-in attempts</dt>
+    <dd>
+      Each attempt to sign in, with a scrambled form of the email or phone number
+      tried and of the network address it came from. Used only to stop passwords
+      and codes being guessed, and deleted after 30 days.
+    </dd>
+
     <dt>Your phone's notification details</dt>
     <dd>
       The address Google's push service gives your phone, the language your
@@ -460,12 +487,28 @@ ul.plain li { margin: 0 0 .45rem; }
     <dt>Problem and crash reports</dt>
     <dd>
       Only if the app crashes, or you send a report. A crash report holds what
-      went wrong, which screen you were on, the app's build number, and a
-      scrambled form of the network address it came from, used only to limit
-      how many reports one address can send. A report you send also holds
-      what you wrote. Phone numbers, email
-      addresses and sign-in tokens are removed before either is stored.
-      Deleted after 90 days.
+      went wrong, which screen you were on, the app's build number, that the
+      phone runs Android, and a scrambled form of the network address it came
+      from, used only to limit how many reports one address can send. A report
+      you send also holds what you wrote. If you were signed in, either is
+      linked to your account and household, so it can be followed up. Phone
+      numbers, email addresses and sign-in tokens are removed before either is
+      stored. Deleted after 90 days.
+    </dd>
+
+    <dt>Server logs</dt>
+    <dd>
+      Each request the app makes: when, which part of the server, the result, how
+      long it took, and your account id if you were signed in. The network
+      address is shortened first, so it cannot point to one connection. Used to
+      find faults and abuse. The logs have a fixed size, so the oldest lines are
+      overwritten as new ones arrive, and they are never backed up.
+    </dd>
+
+    <dt>Emails you send to support</dt>
+    <dd>
+      What you write, and the address you write from. Kept for as long as it takes
+      to answer you.
     </dd>
   </dl>
 
@@ -520,6 +563,20 @@ ul.plain li { margin: 0 0 .45rem; }
       <em>Not in use yet.</em> Will carry the daily message to your cook. See
       below.
     </dd>
+
+    <dt>Cloudflare, and Gmail</dt>
+    <dd>
+      Cloudflare runs the pantrimony.com domain. Email sent to
+      support@pantrimony.com passes through Cloudflare to the owner's Gmail
+      inbox, where Google stores it.
+    </dd>
+
+    <dt>GitHub</dt>
+    <dd>
+      Hosts this website, pantrimony.com. Like any web host, it sees the network
+      address of anyone who opens a page here. The website itself sets no cookies
+      and runs no tracking.
+    </dd>
   </dl>
   <p>
     No one else. There is no data broker, no CRM, no marketing tool and no
@@ -529,9 +586,9 @@ ul.plain li { margin: 0 0 .45rem; }
   <h2 id="your-cook">Your cook</h2>
   <p>
     The point of Pantrimony is to tell the person who cooks what to cook. Doing
-    that means holding <strong>a phone number belonging to someone who does not
-    use this app</strong>, and sending messages to it. So here is what the app
-    does about that.
+    that means holding <strong>the name and phone number of someone who does not
+    use this app</strong>, and sending messages to that number. So here is what
+    the app does about that.
   </p>
   <ul class="plain">
     <li>
@@ -552,7 +609,7 @@ ul.plain li { margin: 0 0 .45rem; }
       The messages say who is sending them, and how to stop receiving them.
     </li>
     <li>
-      Removing a cook from a household deletes the number.
+      Removing a cook from a household deletes their name and number.
     </li>
   </ul>
   <p>
@@ -662,6 +719,11 @@ ul.plain li { margin: 0 0 .45rem; }
       again if you rejoin.
     </li>
     <li><strong>Backups</strong>, 30 days, then deleted automatically.</li>
+    <li>
+      <strong>Server logs</strong>, until overwritten by newer lines; they have a
+      fixed size and are never backed up.
+    </li>
+    <li><strong>Emails to support</strong>, as long as it takes to answer them.</li>
     <li>
       <strong>Sessions</strong>, until they expire, which is at most 30 days. Signing
       out stops a session working at once, but its record is kept, unusable, until
